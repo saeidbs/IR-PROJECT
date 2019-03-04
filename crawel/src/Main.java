@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        String crawlStorageFolder = System.getProperty("user.dir")+"/"+"test";
+        String crawlStorageFolder = "E:/Crawler";
         int numberOfCrawlers = 7;
 
 
@@ -21,7 +21,7 @@ public class Main {
         RobotstxtConfig robotstxtConfig = new RobotstxtConfig();
         RobotstxtServer robotstxtServer = new RobotstxtServer(robotstxtConfig, pageFetcher);
         CrawlController controller = new CrawlController(config, pageFetcher, robotstxtServer);
-
+        config.setMaxPagesToFetch(10000);
 
         // For each crawl, you need to add some seed urls. These are the first
         // URLs that are fetched and then the crawler starts following links
@@ -29,7 +29,7 @@ public class Main {
 //        controller.addSeed("https://www.ics.uci.edu/~lopes/");
 //        controller.addSeed("https://www.ics.uci.edu/~welling/");
 //        controller.addSeed("https://www.ics.uci.edu/");
-            controller.addSeed("https://www.um.ac.ir/");
+            controller.addSeed("http://um.ac.ir/");
 
 
         // The factory which creates instances of crawlers.
